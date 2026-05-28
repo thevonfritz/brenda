@@ -294,6 +294,7 @@ button, input { font: inherit; }
   overflow: hidden;
   min-height: 420px;
   background: rgba(0,0,0,.12);
+  border-radius: var(--radius);
 }
 .intro-photo img {
   width: 100%;
@@ -805,7 +806,8 @@ blockquote {
   .site-header { width: calc(100% - 24px); top: 12px; }
   .logo-text small { display: none; }
   .hero { padding: 124px 20px 78px; gap: 34px; }
-  .hero h1 { font-size: clamp(3.5rem, 18vw, 5.2rem); }
+  .hero h1 { font-size: clamp(2.2rem, 11vw, 3.2rem); }
+  .hero-content { padding-top: 52vh; padding-bottom: 52px; justify-content: flex-end; }
   .button { width: 100%; }
   .hero-buttons { flex-direction: column; }
   .intro-card, .timeline-content, .cause-card, .newsletter-shell, .newsletter-form, .quote-band { padding: 26px; border-radius: 28px; }
