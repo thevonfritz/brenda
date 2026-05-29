@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   --branco:     #FFFFFF;
   --azul:       #00509f;
   --azul-2:     #003d7a;
@@ -304,6 +304,22 @@ button, input { font: inherit; }
   display: block;
 }
 
+.intro-photo--placeholder {
+  background: linear-gradient(135deg, rgba(0,0,0,.18) 0%, rgba(243,112,33,.25) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.intro-photo--placeholder::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px dashed rgba(255,255,255,.35);
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 24 24' fill='none' stroke='rgba(255,255,255,.5)' stroke-width='1.5'%3E%3Cpath d='M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2'/%3E%3Ccircle cx='12' cy='7' r='4'/%3E%3C/svg%3E") center/36px no-repeat;
+}
+
 /* coluna direita — textos */
 .intro-text {
   padding: 52px 56px;
@@ -443,6 +459,15 @@ blockquote {
 .featured-cause h3, .featured-cause p { color: var(--branco); }
 .featured-cause a { color: var(--amarelo-go); }
 
+.causes-heading-inline {
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 2.4vw, 2.6rem);
+  line-height: 1;
+  letter-spacing: -.03em;
+  color: var(--azul);
+  margin-bottom: 24px;
+}
+
 /* ── QUOTE BAND ── */
 .quote-band {
   width: min(1180px, calc(100% - 40px));
@@ -452,9 +477,10 @@ blockquote {
   color: var(--branco);
   background: linear-gradient(135deg, var(--azul) 0%, #005f40 55%, var(--verde-go) 100%);
   box-shadow: var(--shadow);
+  text-align: center;
 }
 .quote-band p { font-family: var(--font-serif); font-size: clamp(3rem, 8vw, 8.5rem); line-height: .85; letter-spacing: -.065em; }
-.quote-band span { display: block; margin-top: 24px; font-size: 1.2rem; max-width: 760px; color: rgba(255,255,255,.82); }
+.quote-band span { display: block; margin-top: 24px; font-size: 1.2rem; max-width: 760px; color: rgba(255,255,255,.82); margin-left: auto; margin-right: auto; }
 
 /* ── TIMELINE / BOLETIM ── */
 .timeline { position: relative; display: grid; gap: 28px; padding-left: 38px; }
@@ -500,7 +526,7 @@ blockquote {
   overflow: hidden;
 }
 .newsletter-copy h2, .newsletter-copy p { color: var(--branco); }
-.accent-laranja { color: var(--laranja-2); font-style: italic; font-family: var(--font-serif); }
+.accent-laranja { color: #FD9346; font-style: italic; font-family: var(--font-serif); }
 .newsletter-form {
   display: grid;
   gap: 16px;
@@ -551,13 +577,15 @@ blockquote {
   padding: 80px 6vw 0;
   display: flex;
   align-items: flex-end;
+  justify-content: center;
   gap: 40px;
   min-height: 240px;
 }
 .footer-headline {
   position: absolute;
   bottom: -0.18em;
-  left: -0.04em;
+  left: 50%;
+  transform: translateX(-50%);
   font-family: var(--font-serif);
   font-size: clamp(8rem, 22vw, 18rem);
   font-weight: 800;
@@ -574,6 +602,8 @@ blockquote {
   padding-bottom: 52px;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
   gap: 18px;
   max-width: 560px;
 }
@@ -608,12 +638,7 @@ blockquote {
   letter-spacing: .04em;
   transition: gap .2s;
 }
-.footer-headline-cta::after {
-  content: "92";
-  font-size: 1rem;
-  transition: transform .2s;
-}
-.footer-headline-cta:hover::after { transform: translateX(5px); }
+.footer-headline-cta:hover { opacity: .8; }
 
 /* linha laranja */
 .footer-accent-line {
@@ -665,6 +690,25 @@ blockquote {
   box-shadow: 0 6px 20px rgba(243,112,33,.4);
   flex-shrink: 0;
 }
+.footer-photo-placeholder {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(255,255,255,.12), rgba(255,255,255,.06));
+  border: 2px dashed rgba(255,255,255,.30);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.footer-photo-placeholder::after {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' fill='none' stroke='rgba(255,255,255,.45)' stroke-width='1.5'%3E%3Cpath d='M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2'/%3E%3Ccircle cx='12' cy='7' r='4'/%3E%3C/svg%3E") center/32px no-repeat;
+}
+
 .footer-col--brand strong {
   font-family: var(--font-serif);
   font-size: 1.35rem;
