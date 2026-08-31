@@ -648,7 +648,6 @@ const prayers={
  pater:"Pai nosso, que estais nos céus, santificado seja o vosso nome; venha a nós o vosso Reino; seja feita a vossa vontade, assim na terra como no céu. O pão nosso de cada dia nos dai hoje; perdoai-nos as nossas ofensas, assim como nós perdoamos a quem nos tem ofendido; e não nos deixeis cair em tentação, mas livrai-nos do mal. Amém.",
  ave:"Ave Maria, cheia de graça, o Senhor é convosco; bendita sois vós entre as mulheres e bendito é o fruto do vosso ventre, Jesus. Santa Maria, Mãe de Deus, rogai por nós, pecadores, agora e na hora de nossa morte. Amém.",
  gloria:"Glória ao Pai, ao Filho e ao Espírito Santo. Como era no princípio, agora e sempre. Amém.",
- mercy:"Meu Jesus, tende misericórdia de nós e levai todas as almas para o Céu.",
  fatima:"Ó meu Jesus, perdoai-nos, livrai-nos do fogo do inferno, levai as almas todas para o Céu e socorrei principalmente as que mais precisarem.",
  salve:"Salve, Rainha, Mãe de misericórdia, vida, doçura e esperança nossa, salve! A vós bradamos, os degredados filhos de Eva. A vós suspiramos, gemendo e chorando neste vale de lágrimas. Eia, pois, advogada nossa, esses vossos olhos misericordiosos a nós volvei. E, depois deste desterro, mostrai-nos Jesus, bendito fruto do vosso ventre. Ó clemente, ó piedosa, ó doce sempre Virgem Maria.\n\nRogai por nós, Santa Mãe de Deus.\nPara que sejamos dignos das promessas de Cristo. Amém.",
  final:"Ó Deus, cujo Filho unigênito, por sua vida, morte e ressurreição, nos mereceu as recompensas da salvação eterna, concedei-nos, nós vos pedimos, que, meditando estes mistérios do Santíssimo Rosário da Bem-aventurada Virgem Maria, imitemos o que contêm e alcancemos o que prometem. Pelo mesmo Cristo, Senhor nosso. Amém."
@@ -753,7 +752,6 @@ function renderMysteries(){
      ${stepHTML(base+"-pater","Pai-Nosso",prayers.pater,{kicker:"Conta grande",size:"lg",icon:"i-bead"})}
      ${Array.from({length:10},(_,i)=>stepHTML(base+"-ave"+(i+1),`${i+1}ª Ave-Maria`,prayers.ave,{kicker:`Ave-Maria ${i+1} de 10`,rep:i>0,icon:"i-bead"})).join("")}
      ${stepHTML(base+"-gloria","Glória ao Pai",prayers.gloria,{kicker:"Fim da dezena",size:"lg",icon:"i-star"})}
-     ${stepHTML(base+"-mercy","Jaculatória — Meu Jesus",prayers.mercy,{kicker:"Jaculatória",icon:"i-heart"})}
      ${stepHTML(base+"-fatima","Oração de Fátima",prayers.fatima,{kicker:"Jaculatória de Fátima",icon:"i-lily"})}
     </div>
    </div>`;
