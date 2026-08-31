@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="claro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f4f1ea" id="themeColor">
+<meta name="description" content="Rosário guiado conta a conta: orações completas, os quatro conjuntos de mistérios e três modos de oração.">
+<title>Santo Terço — Guia Católico Completo</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%235a2e2c'/%3E%3Ccircle cx='32' cy='11.6' r='4.4' fill='%23dcb877'/%3E%3Cpath d='M27.9 18.6h8.2v10.3h10.4v8.2H36.1V54h-8.2V37.1H17.5v-8.2h10.4z' fill='%23dcb877'/%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="alternate icon" href="favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   SANTO TERÇO — flat editorial
+   Inter (interface) + Times New Roman (texto)
+   Ícones: Tabler Icons v3.34.0 (MIT)
+   ========================================================= */
+:root{
+  --sans:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --serif:"Times New Roman",Times,Georgia,serif;
+  --r:2px;
+  --gut:clamp(18px,4vw,44px);
+  --stick:57px;           /* altura do cabeçalho fixo */
+  --rail:180px;           /* coluna de rótulos */
+}
+:root,[data-theme="claro"]{
+  --bg:#f4f1ea;--panel:#fbf9f4;--panel2:#efebe1;
+  --ink:#16130f;--ink2:#3c352c;--muted:#7b7266;
+  --line:#dcd5c6;--line2:#eae4d7;--rule:#16130f;
+  --wine:#7a2f2c;--gold:#94701f;
+  --inv-bg:#16130f;--inv-ink:#f7f3ea;--on-acc:#fff;
+}
+[data-theme="noite"]{
+  --bg:#100e0c;--panel:#191613;--panel2:#221e19;
+  --ink:#f4efe5;--ink2:#d8d0c3;--muted:#968c7e;
+  --line:#332d26;--line2:#26211c;--rule:#f4efe5;
+  --wine:#d9968c;--gold:#d3ad66;
+  --inv-bg:#f4efe5;--inv-ink:#16130f;--on-acc:#16130f;
+}
+body[data-set="gozosos"]  {--acc:#3f6497}
+body[data-set="luminosos"]{--acc:#256e6b}
+body[data-set="dolorosos"]{--acc:#8c2f2c}
+body[data-set="gloriosos"]{--acc:#8a6c1c}
+[data-theme="noite"] body[data-set="gozosos"]  {--acc:#8fb0e0}
+[data-theme="noite"] body[data-set="luminosos"]{--acc:#63c0bb}
+[data-theme="noite"] body[data-set="dolorosos"]{--acc:#e29089}
+[data-theme="noite"] body[data-set="gloriosos"]{--acc:#dfba62}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;color-scheme:light;-webkit-text-size-adjust:100%}
+[data-theme="noite"]{color-scheme:dark}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font:400 17px/1.62 var(--serif);
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;overflow-wrap:break-word
+}
+button,select{font:inherit;color:inherit;-webkit-tap-highlight-color:transparent}
+a{color:inherit}
+svg{display:block}
+:focus-visible{outline:2px solid var(--acc,var(--wine));outline-offset:2px}
+::selection{background:var(--acc);color:var(--on-acc)}
+
+h1,h2,h3,h4{margin:0;font-weight:400;letter-spacing:-.015em;line-height:1.1}
+h1{font-size:clamp(2.7rem,9vw,5.4rem);letter-spacing:-.03em}
+h2{font-size:clamp(1.7rem,4.6vw,2.5rem)}
+h3{font-size:clamp(1.35rem,3.6vw,1.8rem)}
+h4{font-size:1.12rem;letter-spacing:-.01em}
+p{margin:0}
+em,i{font-style:italic}
+.kick{font:700 .62rem/1.3 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.kick.acc{color:var(--acc)}
+.lead{font-size:1.1rem;color:var(--ink2);max-width:62ch;text-wrap:pretty}
+.small{font:500 .82rem/1.5 var(--sans);color:var(--muted)}
+.num{font-variant-numeric:tabular-nums}
+
+.wrap{width:min(100%,1080px);margin:0 auto;padding-inline:var(--gut)}
+.sec,.mystery,.pstep,[id]{scroll-margin-top:calc(var(--stick) + 14px)}
+.icon{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.icon-lg{width:20px;height:20px}
+
+/* ---------- cabeçalho fixo (um único elemento: sem emenda) ---------- */
+#progress{position:fixed;top:0;left:0;height:2px;width:0;z-index:500;background:var(--acc,var(--wine))}
+.top{position:sticky;top:0;z-index:300;background:var(--bg);border-bottom:1px solid var(--line)}
+.topin{display:flex;align-items:center;justify-content:space-between;gap:12px;height:56px}
+.brand{display:flex;align-items:center;gap:10px;min-width:0}
+.brand .mark{width:30px;height:30px;background:var(--wine);color:var(--bg);display:grid;place-items:center;border-radius:var(--r);flex:none}
+.brand .mark .icon{width:16px;height:16px}
+.brand b{display:block;font:400 1.14rem/1 var(--serif);letter-spacing:-.01em;white-space:nowrap}
+.brand .bsub{display:block;font:700 .55rem/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+.actions{display:flex;gap:6px;flex:none}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:7px;cursor:pointer;
+  min-height:38px;padding:0 13px;border:1px solid var(--line);border-radius:var(--r);
+  background:transparent;color:var(--ink);font:600 .76rem var(--sans);transition:background .15s,border-color .15s,color .15s
+}
+.btn:hover{background:var(--panel2);border-color:var(--muted)}
+.btn.solid{background:var(--inv-bg);border-color:var(--inv-bg);color:var(--inv-ink)}
+.btn.solid:hover{background:var(--inv-bg);opacity:.86}
+.btn.accent{background:var(--acc);border-color:var(--acc);color:var(--on-acc)}
+.btn.accent:hover{background:var(--acc);opacity:.9}
+.ctrl{border-bottom:1px solid var(--line)}
+.ctrlin{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:54px}
+.tgroup{display:flex;align-items:center;gap:12px;min-width:0}
+.tlabel{font:700 .56rem var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--muted);flex:none}
+.chips{display:flex;flex-wrap:wrap;gap:6px;padding-block:8px;min-width:0}
+.chip{
+  display:inline-flex;align-items:center;gap:7px;white-space:nowrap;cursor:pointer;
+  min-height:36px;padding:0 12px;border:1px solid var(--line);border-radius:var(--r);background:transparent;
+  font:600 .76rem var(--sans);color:var(--muted);transition:.15s
+}
+.chip .icon{width:14px;height:14px}
+.chip:hover{color:var(--ink);border-color:var(--muted)}
+.chip[aria-pressed="true"]{background:var(--acc);border-color:var(--acc);color:var(--on-acc)}
+.today-flag{font:800 .5rem var(--sans);letter-spacing:.14em;text-transform:uppercase;border:1px solid currentColor;padding:1px 4px;opacity:.9}
+.hprog{display:flex;align-items:center;gap:12px;flex:none;font:600 .72rem var(--sans);color:var(--muted)}
+.hprog .bar{width:120px}
+
+/* ---------- segmentado (modos) ---------- */
+.seg{display:flex;border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.seg button{
+  display:inline-flex;align-items:center;justify-content:center;gap:7px;cursor:pointer;white-space:nowrap;
+  border:0;border-left:1px solid var(--line);background:transparent;color:var(--muted);
+  min-height:42px;padding:0 15px;font:600 .75rem var(--sans);transition:.15s;flex:1
+}
+.seg button:first-child{border-left:0}
+.seg button:hover{color:var(--ink)}
+.seg button[aria-pressed="true"]{background:var(--inv-bg);color:var(--inv-ink)}
+
+/* ---------- masthead ---------- */
+.masthead{padding-block:clamp(24px,6vw,56px) 0}
+.masthead .kick{display:flex;align-items:center;gap:12px}
+.masthead .kick:after{content:"";height:1px;flex:1;background:var(--line)}
+.masthead h1{margin:.16em 0 .12em}
+.mast-sub{display:grid;grid-template-columns:1.5fr auto;gap:clamp(16px,4vw,48px);align-items:end;padding-bottom:24px}
+.mast-fig{align-self:end;justify-self:end;width:112px;color:var(--ink);opacity:.7}
+.meta{display:grid;grid-template-columns:repeat(3,1fr);border-top:2px solid var(--rule);border-bottom:1px solid var(--line)}
+.meta>div{padding:14px 18px 15px;border-left:1px solid var(--line)}
+.meta>div:first-child{border-left:0;padding-left:0}
+.meta span{display:block;font:700 .58rem var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.meta strong{font-weight:400;font-size:1.08rem;line-height:1.25;display:block}
+
+/* ---------- santo do dia ---------- */
+.saint{display:grid;grid-template-columns:var(--rail) 1fr auto;gap:clamp(16px,4vw,40px);align-items:baseline;padding-block:18px;border-bottom:1px solid var(--line)}
+.saint h4{font-size:1.24rem}
+.saint p{margin-top:3px}
+.saint a{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font:600 .74rem var(--sans);border-bottom:1px solid var(--line);padding-bottom:2px;white-space:nowrap}
+.saint a:hover{border-color:var(--ink)}
+
+/* ---------- sumário ---------- */
+.toc{display:flex;flex-wrap:wrap;gap:0 26px;padding-block:12px;border-bottom:1px solid var(--line)}
+.toc a{text-decoration:none;font:600 .72rem var(--sans);color:var(--muted);display:inline-flex;align-items:center;gap:7px;min-height:30px}
+.toc a:hover{color:var(--ink)}
+.toc a b{font:700 .62rem var(--sans);color:var(--acc)}
+
+/* ---------- painel ---------- */
+.panel{display:grid;grid-template-columns:270px 1fr;border-bottom:1px solid var(--line)}
+.panel-art{padding:26px 26px 26px 0;border-right:1px solid var(--line);display:grid;place-items:center}
+.panel-art svg{width:100%;max-width:210px;height:auto;overflow:visible}
+.panel-side{padding:26px 0 28px 30px;display:flex;flex-direction:column;gap:18px;justify-content:center;min-width:0}
+.nowline{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:baseline;padding-top:14px;border-top:1px solid var(--line)}
+.nowline strong{font-weight:400;font-size:1.3rem;line-height:1.2}
+.bar{height:2px;background:var(--line);overflow:hidden}
+.bar>span{display:block;height:100%;width:0;background:var(--acc);transition:width .3s}
+.stats{display:flex;justify-content:space-between;font:600 .74rem var(--sans);color:var(--muted);margin-top:8px}
+.modebox{display:grid;gap:9px}
+.panel-cta{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.linkbtn{border:0;background:transparent;color:var(--muted);font:600 .72rem var(--sans);cursor:pointer;text-decoration:underline;text-underline-offset:3px;padding:8px 2px}
+.linkbtn:hover{color:var(--ink)}
+.chain-line{fill:none;stroke:var(--line);stroke-width:1}
+.bead{fill:var(--bg);stroke:var(--muted);stroke-width:1.1;cursor:pointer;transition:.2s}
+.bead:hover{stroke:var(--ink)}
+.bead.filled{fill:var(--acc);stroke:var(--acc)}
+.bead.current{stroke:var(--ink);stroke-width:2}
+.medal{fill:var(--bg);stroke:var(--muted);stroke-width:1.1}
+.medal-mark{fill:none;stroke:var(--muted);stroke-width:1;stroke-linecap:round}
+.rcross{fill:var(--bg);stroke:var(--muted);stroke-width:1.1;cursor:pointer;transition:.2s}
+.rcross.filled{fill:var(--acc);stroke:var(--acc)}
+.rcross.current{stroke:var(--ink);stroke-width:2}
+
+/* ---------- seções ---------- */
+.sec{padding-block:clamp(32px,6vw,60px);border-bottom:1px solid var(--line)}
+.sechead{display:grid;grid-template-columns:var(--rail) 1fr;gap:clamp(16px,4vw,40px);align-items:start;margin-bottom:24px}
+.sechead .kick{padding-top:.5em}
+.sechead .lead{margin-top:12px}
+.prepgrid{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line)}
+.prepgrid>div{padding:24px 26px 26px}
+.prepgrid>div:first-child{padding-left:0;border-right:1px solid var(--line)}
+.prepgrid h4{margin-bottom:8px}
+.prepgrid p{color:var(--ink2)}
+.prepgrid .quote{border-left:2px solid var(--acc);padding-left:16px;margin-top:14px;font-size:1.08rem}
+.note{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);color:var(--muted);font:500 .88rem/1.6 var(--sans)}
+
+/* ---------- contas ---------- */
+.beads{position:relative;margin-top:6px}
+.beads:before{content:"";position:absolute;left:13px;top:12px;bottom:12px;width:1px;background:var(--line)}
+.pstep{position:relative;padding:14px 0 15px 46px;border-top:1px solid var(--line2)}
+.pstep:first-child{border-top:1px solid var(--line)}
+.pstep .kicker{font:700 .56rem var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+.prayer{margin-top:7px;white-space:pre-line;color:var(--ink2);font-size:1.05rem;max-width:66ch;text-wrap:pretty}
+.check{
+  position:absolute;left:0;top:14px;width:27px;height:27px;padding:0;cursor:pointer;border-radius:50%;
+  border:1.5px solid var(--muted);background:var(--bg);color:transparent;display:grid;place-items:center;transition:.16s
+}
+.check:before{content:"";position:absolute;inset:-10px}
+.check svg{width:13px;height:13px;stroke-width:3}
+.check:hover{border-color:var(--ink)}
+.pstep.lg .check{border-width:3px}
+.pstep.cross .check{border-radius:0}
+.pstep.done .check{background:var(--acc);border-color:var(--acc);color:var(--on-acc)}
+.pstep.done h4,.pstep.done .prayer{color:var(--muted)}
+.pstep.current:before{content:"";position:absolute;left:-14px;top:14px;width:3px;height:27px;background:var(--acc)}
+.pstep.current .check{border-color:var(--acc)}
+.tap-hint{display:none;margin-top:6px;align-items:center;gap:6px;color:var(--muted);font:600 .68rem var(--sans)}
+.tap-hint .icon{width:12px;height:12px}
+body.mode-guiado .pstep.rep .prayer{display:none}
+body.mode-guiado .pstep.rep.open .prayer{display:block}
+body.mode-guiado .pstep.rep:not(.open) .tap-hint{display:inline-flex}
+body.mode-guiado .pstep.rep{cursor:pointer}
+
+/* ---------- mistérios ---------- */
+.mystery{border-top:1px solid var(--line);padding-top:26px;margin-top:34px}
+.mystery:first-child{margin-top:20px}
+.mhead{display:grid;grid-template-columns:var(--rail) 1fr;gap:clamp(16px,4vw,40px);align-items:start}
+.mnum{display:flex;flex-direction:column;gap:8px}
+.mnum .roman{font:400 clamp(2.4rem,7vw,4rem)/1 var(--serif);color:var(--acc);letter-spacing:-.04em}
+.mnum .of{font:700 .58rem/1.4 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.mhead h3{margin-bottom:12px}
+.mhead .what{font-size:1.12rem;color:var(--ink2);max-width:60ch;text-wrap:pretty}
+.mhead .med{margin-top:10px;color:var(--muted);font-style:italic;max-width:60ch}
+.ref{display:inline-flex;align-items:center;gap:7px;margin-top:14px;font:700 .7rem var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--acc);border:1px solid var(--acc);padding:6px 10px;border-radius:var(--r)}
+.sequence{margin-top:26px;display:grid;grid-template-columns:var(--rail) 1fr;gap:clamp(16px,4vw,40px);align-items:start}
+.sequence-title{font:700 .58rem var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);display:flex;flex-direction:column;gap:6px;position:sticky;top:calc(var(--stick) + 16px)}
+.decade-count{color:var(--acc);font-size:.68rem;letter-spacing:.08em}
+
+/* ---------- consulta ---------- */
+.types{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line)}
+.type{padding:22px 26px 24px;border-bottom:1px solid var(--line)}
+.type:nth-child(odd){padding-left:0;border-right:1px solid var(--line)}
+.type h4{display:flex;align-items:center;gap:9px;margin-bottom:4px}
+.type h4 .icon{width:18px;height:18px;color:var(--acc)}
+.type .days{font:700 .58rem var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.type p{color:var(--ink2);font-size:1rem;margin-bottom:14px}
+
+footer{padding-block:32px 44px;font:500 .76rem/1.7 var(--sans);color:var(--muted);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* ---------- leitura ---------- */
+body.mode-leitura .check,body.mode-leitura .beads:before,body.mode-leitura .tap-hint,
+body.mode-leitura .panel-art,body.mode-leitura .pstep.current:before,body.mode-leitura .hprog{display:none!important}
+body.mode-leitura .panel{grid-template-columns:1fr}
+body.mode-leitura .panel-side{padding-inline:0}
+body.mode-leitura .pstep{padding-left:0}
+body.mode-leitura .prayer{font-size:1.12rem;max-width:68ch}
+
+/* ---------- uma conta ---------- */
+.bead-mode{position:fixed;inset:0;z-index:600;display:none;background:var(--bg)}
+body.mode-conta .bead-mode{display:flex;flex-direction:column}
+body.locked{position:fixed;left:0;right:0;width:100%;overflow:hidden}
+.bm-top{display:flex;align-items:center;justify-content:space-between;gap:12px;height:56px;border-bottom:1px solid var(--line)}
+.bm-ctx{display:flex;align-items:center;gap:9px;min-width:0;font:700 .62rem var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.bm-ctx strong{color:var(--acc)}
+.bm-body{flex:1;overflow:auto;display:flex;align-items:center;justify-content:center;padding-block:24px}
+.bm-inner{width:min(100%,680px);margin:0 auto}
+.bm-kicker{font:700 .6rem var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--acc)}
+.bm-title{font:400 clamp(1.9rem,6vw,3.1rem)/1.08 var(--serif);letter-spacing:-.03em;margin:10px 0 20px;padding-bottom:20px;border-bottom:1px solid var(--line)}
+.bm-mystery{margin-bottom:22px;padding-left:16px;border-left:2px solid var(--acc);color:var(--ink2)}
+.bm-mystery b{display:block;font-weight:400;font-size:1.2rem;color:var(--ink);margin-bottom:4px}
+.bm-mystery i{color:var(--muted)}
+.bm-text{white-space:pre-line;font-size:clamp(1.1rem,2.4vw,1.32rem);line-height:1.66;color:var(--ink);max-width:58ch;text-wrap:pretty}
+.bm-track{display:flex;align-items:center;gap:6px;margin-top:26px;flex-wrap:wrap}
+.bm-track i{width:8px;height:8px;border-radius:50%;border:1px solid var(--muted)}
+.bm-track i.big{width:11px;height:11px;border-width:2px}
+.bm-track i.on{background:var(--acc);border-color:var(--acc)}
+.bm-track i.now{background:var(--ink);border-color:var(--ink);transform:scale(1.25)}
+.bm-foot{border-top:1px solid var(--line);padding-block:12px max(12px,env(safe-area-inset-bottom))}
+.bm-footin{display:flex;align-items:center;gap:12px}
+.bm-foot .bar{flex:1}
+.bm-prev{width:46px;min-height:46px;padding:0}
+.bm-next{min-height:46px;padding:0 20px}
+
+/* ---------- barra inferior (mobile) ---------- */
+.mobar{display:none}
+
+/* =========================================================
+   RESPONSIVO
+   ========================================================= */
+@media(max-width:1000px){
+  :root{--rail:130px}
+  .panel{grid-template-columns:1fr}
+  .panel-art{border-right:0;border-bottom:1px solid var(--line);padding:24px 0}
+  .panel-side{padding:24px 0 26px}
+  .mast-sub{grid-template-columns:1fr}
+  .mast-fig{display:none}
+  .hprog .bar{width:80px}
+}
+@media(max-width:820px){
+  .sechead,.mhead,.sequence,.saint{grid-template-columns:1fr;gap:12px}
+  .saint{align-items:start}
+  .sechead .kick{padding-top:0}
+  .sequence-title{position:static;flex-direction:row;align-items:baseline;justify-content:space-between;gap:12px}
+  .mnum{flex-direction:row;align-items:baseline;gap:12px}
+  .mnum .roman{font-size:2.2rem}
+}
+@media(max-width:720px){
+  :root{--stick:53px}
+  body{font-size:16px;line-height:1.6;padding-bottom:76px}
+  .hide-sm{display:none!important}
+
+  /* cabeçalho: 2 linhas dentro do MESMO sticky */
+  .topin{height:52px}
+  .brand .bsub{display:none}
+  .btn{min-height:36px;padding:0 11px;font-size:.73rem}
+  .ctrlin{min-height:0;padding-block:10px}
+  .tgroup{width:100%}
+  .tlabel{display:none}
+  .chips{display:grid;grid-template-columns:1fr 1fr;gap:6px;width:100%;padding-block:0}
+  .chip{min-height:40px;font-size:.75rem;padding:0 12px;justify-content:flex-start}
+  .hprog{display:none}
+
+  .masthead{padding-top:20px}
+  .masthead h1{font-size:clamp(2.5rem,12vw,3.4rem)}
+  .mast-sub{padding-bottom:18px}
+  .mast-sub .lead{font-size:1.02rem}
+  .meta{grid-template-columns:1fr;border-top-width:1px}
+  .meta>div{border-left:0;border-top:1px solid var(--line2);padding:11px 0}
+  .meta>div:first-child{border-top:0}
+  .meta span{margin-bottom:2px}
+  .meta strong{font-size:1.02rem}
+
+  .saint{padding-block:16px;gap:8px}
+  .saint a{justify-self:start;margin-top:4px}
+
+  .toc{gap:0 20px;padding-block:6px;flex-wrap:wrap}
+  .toc a{white-space:nowrap;min-height:34px}
+
+  .panel-art{padding-block:22px}
+  .panel-art svg{max-width:180px}
+  .panel-side{gap:16px}
+  .nowline{grid-template-columns:1fr;gap:3px}
+  .nowline strong{font-size:1.22rem}
+  .panel-cta{display:grid;grid-template-columns:1fr;gap:8px}
+  .panel-cta .btn{min-height:46px}
+  .panel-cta .linkbtn{justify-self:start}
+  .seg button{padding:0 6px;font-size:.72rem;gap:5px;min-height:46px}
+
+  .sec{padding-block:28px}
+  .sechead{margin-bottom:18px}
+  .prepgrid{grid-template-columns:1fr}
+  .prepgrid>div{padding:20px 0}
+  .prepgrid>div:first-child{border-right:0;border-bottom:1px solid var(--line2)}
+  .types{grid-template-columns:1fr}
+  .type{padding:20px 0}
+  .type:nth-child(odd){border-right:0;padding-left:0}
+
+  .mystery{margin-top:24px;padding-top:20px}
+  .mhead h3{font-size:1.4rem}
+  .mhead .what{font-size:1.03rem}
+  .ref{margin-top:12px}
+  .sequence{margin-top:16px}
+
+  .pstep{padding:13px 0 14px 40px}
+  .beads:before{left:12px}
+  .check{width:25px;height:25px;top:13px}
+  .pstep.current:before{left:-9px;width:2px;height:25px}
+  .prayer{font-size:1.02rem}
+
+  footer{padding-block:26px 30px;flex-direction:column;gap:4px}
+
+  /* barra inferior fixa */
+  .mobar{
+    display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;
+    position:fixed;left:0;right:0;bottom:0;z-index:250;background:var(--bg);border-top:1px solid var(--line);
+    padding:9px var(--gut) max(9px,env(safe-area-inset-bottom))
+  }
+  .mobar .mo-label{font:700 .54rem var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+  .mobar .mo-step{font:400 1.04rem/1.25 var(--serif);margin:2px 0 6px;
+    display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
+  .mobar .btn{min-height:46px;padding:0 18px}
+  body.mode-leitura .mobar,body.mode-conta .mobar{display:none}
+  body.mode-leitura{padding-bottom:0}
+
+  .bm-top{height:52px}
+  .bm-body{padding-block:16px;align-items:flex-start}
+  .bm-title{font-size:clamp(1.7rem,8vw,2.2rem);margin:8px 0 16px;padding-bottom:16px}
+  .bm-text{font-size:1.1rem;max-width:none}
+  .bm-mystery{margin-bottom:18px}
+  .bm-track{margin-top:20px}
+  .bm-footin{flex-wrap:wrap;gap:10px}
+  .bm-foot .bar{order:-1;flex-basis:100%}
+  .bm-next{flex:1;min-height:50px;font-size:.8rem}
+  .bm-prev{min-height:50px;width:50px}
+  #bmCount{order:2}
+}
+@media(max-width:380px){
+  :root{--gut:14px}
+  .brand b{font-size:1rem}
+  .seg button{font-size:.68rem;padding:0 3px}
+  .seg button .icon{display:none}
+  .btn{padding:0 9px}
+}
+@media print{
+  .top,.toc,.panel,.mobar,.bead-mode,#progress,.check{display:none!important}
+  body{background:#fff;color:#000;font-size:11pt;padding:0}
+  .pstep{padding-left:0;break-inside:avoid}
+  .pstep .prayer{display:block!important}
+  .mystery,.sec{break-inside:avoid}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body data-set="gozosos" class="mode-guiado">
+<div id="progress"></div>
+
+<!-- Ícones: Tabler Icons v3.34.0 — licença MIT — https://tabler.io/icons -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-cross" viewBox="0 0 24 24"><path d="M10 21h4v-9h5v-4h-5v-5h-4v5h-5v4h5z" /></symbol>
+  <symbol id="i-rosary" viewBox="0 0 24 24"><path d="M8.56 3.69a9 9 0 0 0 -2.92 1.95" /> <path d="M3.69 8.56a9 9 0 0 0 -.69 3.44" /> <path d="M3.69 15.44a9 9 0 0 0 1.95 2.92" /> <path d="M8.56 20.31a9 9 0 0 0 3.44 .69" /> <path d="M15.44 20.31a9 9 0 0 0 2.92 -1.95" /> <path d="M20.31 15.44a9 9 0 0 0 .69 -3.44" /> <path d="M20.31 8.56a9 9 0 0 0 -1.95 -2.92" /> <path d="M15.44 3.69a9 9 0 0 0 -3.44 -.69" /></symbol>
+  <symbol id="i-bead" viewBox="0 0 24 24"><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /></symbol>
+  <symbol id="i-lily" viewBox="0 0 24 24"><path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /> <path d="M12 2a3 3 0 0 1 3 3c0 .562 -.259 1.442 -.776 2.64l-.724 1.36l1.76 -1.893c.499 -.6 .922 -1 1.27 -1.205a2.968 2.968 0 0 1 4.07 1.099a3.011 3.011 0 0 1 -1.09 4.098c-.374 .217 -.99 .396 -1.846 .535l-2.664 .366l2.4 .326c1 .145 1.698 .337 2.11 .576a3.011 3.011 0 0 1 1.09 4.098a2.968 2.968 0 0 1 -4.07 1.098c-.348 -.202 -.771 -.604 -1.27 -1.205l-1.76 -1.893l.724 1.36c.516 1.199 .776 2.079 .776 2.64a3 3 0 0 1 -6 0c0 -.562 .259 -1.442 .776 -2.64l.724 -1.36l-1.76 1.893c-.499 .601 -.922 1 -1.27 1.205a2.968 2.968 0 0 1 -4.07 -1.098a3.011 3.011 0 0 1 1.09 -4.098c.374 -.218 .99 -.396 1.846 -.536l2.664 -.366l-2.4 -.325c-1 -.145 -1.698 -.337 -2.11 -.576a3.011 3.011 0 0 1 -1.09 -4.099a2.968 2.968 0 0 1 4.07 -1.099c.348 .203 .771 .604 1.27 1.205l1.76 1.894c-1 -2.292 -1.5 -3.625 -1.5 -4a3 3 0 0 1 3 -3z" /></symbol>
+  <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 10.941c2.333 -3.308 .167 -7.823 -1 -8.941c0 3.395 -2.235 5.299 -3.667 6.706c-1.43 1.408 -2.333 3.621 -2.333 5.588c0 3.704 3.134 6.706 7 6.706s7 -3.002 7 -6.706c0 -1.712 -1.232 -4.403 -2.333 -5.588c-2.084 3.353 -3.257 3.353 -4.667 2.235" /></symbol>
+  <symbol id="i-crown" viewBox="0 0 24 24"><path d="M12 6l4 6l5 -4l-2 10h-14l-2 -10l5 4z" /></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M16 18a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2zm0 -12a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2zm-7 12a6 6 0 0 1 6 -6a6 6 0 0 1 -6 -6a6 6 0 0 1 -6 6a6 6 0 0 1 6 6z" /></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572" /></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" /> <path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" /> <path d="M3 6l0 13" /> <path d="M12 6l0 13" /> <path d="M21 6l0 13" /></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12l5 5l10 -10" /></symbol>
+  <symbol id="i-church" viewBox="0 0 24 24"><path d="M3 21l18 0" /> <path d="M10 21v-4a2 2 0 0 1 4 0v4" /> <path d="M10 5l4 0" /> <path d="M12 3l0 5" /> <path d="M6 21v-7m-2 2l8 -8l8 8m-2 -2v7" /></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><path d="M11 6h9" /> <path d="M11 12h9" /> <path d="M12 18h8" /> <path d="M4 16a2 2 0 1 1 4 0c0 .591 -.5 1 -1 1.5l-3 2.5h4" /> <path d="M6 10v-6l-2 2" /></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" /> <path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" /></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" /></symbol>
+  <symbol id="i-external" viewBox="0 0 24 24"><path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6" /> <path d="M11 13l9 -9" /> <path d="M15 4h5v5" /></symbol>
+  <symbol id="i-hands" viewBox="0 0 24 24"><path d="M12 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /> <path d="M7 20h8l-4 -4v-7l4 3l2 -2" /></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /> <path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" /></symbol>
+  <symbol id="i-left" viewBox="0 0 24 24"><path d="M15 6l-6 6l6 6" /></symbol>
+  <symbol id="i-right" viewBox="0 0 24 24"><path d="M9 6l6 6l-6 6" /></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M18 6l-12 12" /> <path d="M6 6l12 12" /></symbol>
+  <symbol id="i-text" viewBox="0 0 24 24"><path d="M4 6l16 0" /> <path d="M4 12l10 0" /> <path d="M4 18l14 0" /></symbol>
+  <symbol id="i-fig" viewBox="0 0 120 150">
+    <circle cx="60" cy="52" r="40" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="1.4 7.6" stroke-linecap="round"/>
+    <path d="M60 92v14" fill="none" stroke="currentColor" stroke-width="1"/>
+    <circle cx="60" cy="110" r="3.4" fill="none" stroke="currentColor" stroke-width="1"/>
+    <path d="M60 114v8" fill="none" stroke="currentColor" stroke-width="1"/>
+    <path d="M57 120h6v10h9v6h-9v14h-6v-14h-9v-6h9z" fill="currentColor"/>
+  </symbol>
+</svg>
+<header class="top">
+  <div class="wrap topin">
+    <div class="brand">
+      <span class="mark"><svg class="icon"><use href="#i-cross"/></svg></span>
+      <span><b>Santo Terço</b><span class="bsub">Guia devocional</span></span>
+    </div>
+    <div class="actions">
+      <button class="btn" id="themeBtn" aria-label="Alternar tema"><svg class="icon"><use href="#i-moon" id="themeIcon"/></svg><span class="hide-sm" id="themeText">Noite</span></button>
+      <button class="btn" id="fontBtn" aria-label="Aumentar o texto">A⁺</button>
+    </div>
+  </div>
+</header>
+
+<div class="ctrl">
+  <div class="wrap ctrlin">
+    <div class="tgroup">
+      <span class="tlabel">Mistérios</span>
+      <div class="chips" id="setChips"></div>
+    </div>
+    <div class="hprog">
+      <span id="progressText" class="num">0 de 0 contas</span>
+      <div class="bar"><span id="stepBar"></span></div>
+    </div>
+  </div>
+</div>
+
+<main>
+<section class="wrap masthead" id="topo">
+  <div class="kick">Rosário guiado &middot; passo a passo</div>
+  <h1>Santo&nbsp;Terço</h1>
+  <div class="mast-sub">
+    <p class="lead">Feito para quem já reza e também para quem ainda está aprendendo: nenhuma oração é presumida. Do primeiro sinal da cruz até a conclusão, conta por conta.</p>
+    <svg class="mast-fig" viewBox="0 0 120 150"><use href="#i-fig"/></svg>
+  </div>
+  <div class="meta">
+    <div><span>Data</span><strong id="dateLabel">—</strong></div>
+    <div><span>Mistérios em oração</span><strong id="mysteryType">—</strong></div>
+    <div><span>Dia</span><strong id="weekdayLabel">—</strong></div>
+  </div>
+</section>
+
+<section class="wrap saint" id="saintCard">
+  <div class="kick acc">Santo do dia</div>
+  <div>
+    <h4 id="saintTitle">Carregando celebração…</h4>
+    <p class="small" id="saintSub">A data é consultada automaticamente.</p>
+  </div>
+  <a id="saintLink" href="https://www.vaticannews.va/pt/santo-do-dia.html" target="_blank" rel="noopener">Vatican News <svg class="icon"><use href="#i-external"/></svg></a>
+</section>
+
+<nav class="wrap toc">
+  <a href="#preparacao"><b>01</b>Preparação</a>
+  <a href="#iniciais"><b>02</b>Orações iniciais</a>
+  <a href="#misterios"><b>03</b>Mistérios</a>
+  <a href="#final"><b>04</b>Conclusão</a>
+  <a href="#consulta"><b>05</b>Consulta</a>
+</nav>
+
+<section class="wrap panel" aria-label="Seu terço">
+  <div class="panel-art"><svg id="rosarySvg" viewBox="0 0 300 400" role="img" aria-label="Rosário com o progresso das contas"></svg></div>
+  <div class="panel-side">
+    <div>
+      <div class="kick acc">Seu terço de hoje</div>
+      <h3 id="setTitle" style="margin-top:6px">Mistérios</h3>
+    </div>
+    <div>
+      <div class="nowline">
+        <span class="kick">Próxima conta</span>
+        <strong id="nowStep">Sinal da Cruz</strong>
+      </div>
+      <div class="stats"><span id="statLeft">0 de 0 contas</span><span id="statRight" class="num">0%</span></div>
+      <div class="bar" style="margin-top:6px"><span id="stepBar2"></span></div>
+    </div>
+    <div class="modebox">
+      <span class="kick">Modo de oração</span>
+      <div class="seg" id="modeSeg">
+        <button data-mode="guiado" aria-pressed="true"><svg class="icon"><use href="#i-list"/></svg>Guiado</button>
+        <button data-mode="conta" aria-pressed="false"><svg class="icon"><use href="#i-bead"/></svg>Uma conta</button>
+        <button data-mode="leitura" aria-pressed="false"><svg class="icon"><use href="#i-text"/></svg>Leitura</button>
+      </div>
+    </div>
+    <div class="panel-cta">
+      <button class="btn solid" id="prayBtn"><svg class="icon"><use href="#i-hands"/></svg>Rezar conta a conta</button>
+      <button class="btn" id="jumpBtn"><svg class="icon"><use href="#i-eye"/></svg>Ir para a conta atual</button>
+      <button class="linkbtn" id="resetAll">Reiniciar progresso</button>
+    </div>
+  </div>
+</section>
+
+<section class="wrap sec" id="preparacao">
+  <div class="sechead">
+    <div class="kick">01 &middot; Antes de começar</div>
+    <div>
+      <h2>Preparação interior</h2>
+      <p class="lead">Faça alguns segundos de silêncio. Pense por quem ou por qual intenção deseja oferecer este terço.</p>
+    </div>
+  </div>
+  <div class="prepgrid">
+    <div>
+      <h4>Coloque-se na presença de Deus</h4>
+      <p>Não é preciso já conhecer a estrutura. A página abaixo apresenta exatamente qual oração vem em seguida e o texto completo de cada uma.</p>
+      <p class="note">Marque cada conta ao terminar a oração. O progresso fica salvo neste navegador, separado por conjunto de mistérios.</p>
+    </div>
+    <div>
+      <div class="kick acc">Opcional</div>
+      <h4 style="margin-top:8px">Vinde, Espírito Santo</h4>
+      <p class="quote">Vinde, Espírito Santo, enchei os corações dos vossos fiéis e acendei neles o fogo do vosso amor.</p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap sec" id="iniciais">
+  <div class="sechead">
+    <div class="kick">02 &middot; Parte I &middot; Pendente</div>
+    <div>
+      <h2>Orações iniciais</h2>
+      <p class="lead">Rezadas na cruz e nas primeiras contas, antes de começar as dezenas.</p>
+    </div>
+  </div>
+  <div class="beads" id="initialList"></div>
+</section>
+
+<section class="wrap sec" id="misterios">
+  <div class="sechead">
+    <div class="kick">03 &middot; Parte II &middot; As cinco dezenas</div>
+    <div>
+      <h2 id="mysteriesHeading">Mistérios</h2>
+      <p class="lead">Um <em>mistério</em> é um acontecimento da vida de Jesus e de Maria que você contempla enquanto reza a dezena. Hoje você meditará os cinco abaixo, um de cada vez.</p>
+    </div>
+  </div>
+  <div id="mysteryList"></div>
+</section>
+
+<section class="wrap sec" id="final">
+  <div class="sechead">
+    <div class="kick">04 &middot; Parte III</div>
+    <div>
+      <h2>Conclusão do terço</h2>
+      <p class="lead">Depois de completar o quinto mistério, siga estas orações finais.</p>
+    </div>
+  </div>
+  <div class="beads" id="finalList"></div>
+</section>
+
+<section class="wrap sec" id="consulta">
+  <div class="sechead">
+    <div class="kick">05 &middot; Consulta</div>
+    <div>
+      <h2>Os quatro conjuntos de mistérios</h2>
+      <p class="lead">Cada dia da semana tem um conjunto próprio, mas você pode rezar qualquer um deles.</p>
+    </div>
+  </div>
+  <div class="types" id="typesGrid"></div>
+</section>
+
+<footer class="wrap">
+  <span>Santo Terço &middot; página única &middot; progresso salvo localmente</span>
+  <span>Ícones Tabler (MIT) &middot; santo do dia consultado online</span>
+</footer>
+</main>
+
+<div class="mobar" id="mobar">
+  <div style="min-width:0">
+    <div class="mo-label">Próxima conta &middot; <span id="moPct" class="num">0%</span></div>
+    <div class="mo-step" id="moStep">Sinal da Cruz</div>
+    <div class="bar"><span id="stepBar3"></span></div>
+  </div>
+  <button class="btn accent" id="moPray"><svg class="icon"><use href="#i-hands"/></svg>Rezar</button>
+</div>
+
+<div class="bead-mode" id="beadMode" role="dialog" aria-modal="true" aria-label="Modo conta a conta">
+  <div class="wrap bm-top">
+    <div class="bm-ctx"><svg class="icon"><use href="#i-rosary"/></svg><span id="bmCtx">Terço</span></div>
+    <button class="btn" id="bmClose"><svg class="icon"><use href="#i-close"/></svg>Sair</button>
+  </div>
+  <div class="bm-body">
+    <div class="wrap bm-inner">
+      <div class="bm-kicker" id="bmKicker">Oração</div>
+      <h2 class="bm-title" id="bmTitle">—</h2>
+      <div class="bm-mystery" id="bmMystery" hidden></div>
+      <div class="bm-text" id="bmText"></div>
+      <div class="bm-track" id="bmTrack"></div>
+    </div>
+  </div>
+  <div class="bm-foot">
+    <div class="wrap bm-footin">
+      <button class="btn bm-prev" id="bmPrev" aria-label="Conta anterior"><svg class="icon"><use href="#i-left"/></svg></button>
+      <div class="bar"><span id="bmBar"></span></div>
+      <span id="bmCount" class="num" style="font:600 .72rem var(--sans);color:var(--muted);white-space:nowrap">0/0</span>
+      <button class="btn accent bm-next" id="bmNext">Rezei <svg class="icon"><use href="#i-right"/></svg></button>
+    </div>
+  </div>
+</div>
+
+<script>
+const prayers={
+ sign:"Em nome do Pai, do Filho e do Espírito Santo. Amém.",
+ offering:"Divino Jesus, nós Vos oferecemos este terço que vamos rezar, meditando nos mistérios da nossa Redenção. Concedei-nos, por intercessão da Virgem Maria, Mãe de Deus e nossa Mãe, as virtudes que nos são necessárias para bem rezá-lo e a graça de ganharmos as indulgências anexas a esta santa devoção. Amém.",
+ creed:"Creio em Deus Pai todo-poderoso, Criador do céu e da terra; e em Jesus Cristo, seu único Filho, nosso Senhor; que foi concebido pelo poder do Espírito Santo; nasceu da Virgem Maria; padeceu sob Pôncio Pilatos, foi crucificado, morto e sepultado; desceu à mansão dos mortos; ressuscitou ao terceiro dia; subiu aos céus; está sentado à direita de Deus Pai todo-poderoso, donde há de vir a julgar os vivos e os mortos. Creio no Espírito Santo; na Santa Igreja Católica; na comunhão dos santos; na remissão dos pecados; na ressurreição da carne; na vida eterna. Amém.",
+ pater:"Pai nosso, que estais nos céus, santificado seja o vosso nome; venha a nós o vosso Reino; seja feita a vossa vontade, assim na terra como no céu. O pão nosso de cada dia nos dai hoje; perdoai-nos as nossas ofensas, assim como nós perdoamos a quem nos tem ofendido; e não nos deixeis cair em tentação, mas livrai-nos do mal. Amém.",
+ ave:"Ave Maria, cheia de graça, o Senhor é convosco; bendita sois vós entre as mulheres e bendito é o fruto do vosso ventre, Jesus. Santa Maria, Mãe de Deus, rogai por nós, pecadores, agora e na hora de nossa morte. Amém.",
+ gloria:"Glória ao Pai, ao Filho e ao Espírito Santo. Como era no princípio, agora e sempre. Amém.",
+ mercy:"Meu Jesus, tende misericórdia de nós e levai todas as almas para o Céu.",
+ fatima:"Ó meu Jesus, perdoai-nos, livrai-nos do fogo do inferno, levai as almas todas para o Céu e socorrei principalmente as que mais precisarem.",
+ salve:"Salve, Rainha, Mãe de misericórdia, vida, doçura e esperança nossa, salve! A vós bradamos, os degredados filhos de Eva. A vós suspiramos, gemendo e chorando neste vale de lágrimas. Eia, pois, advogada nossa, esses vossos olhos misericordiosos a nós volvei. E, depois deste desterro, mostrai-nos Jesus, bendito fruto do vosso ventre. Ó clemente, ó piedosa, ó doce sempre Virgem Maria.\n\nRogai por nós, Santa Mãe de Deus.\nPara que sejamos dignos das promessas de Cristo. Amém.",
+ final:"Ó Deus, cujo Filho unigênito, por sua vida, morte e ressurreição, nos mereceu as recompensas da salvação eterna, concedei-nos, nós vos pedimos, que, meditando estes mistérios do Santíssimo Rosário da Bem-aventurada Virgem Maria, imitemos o que contêm e alcancemos o que prometem. Pelo mesmo Cristo, Senhor nosso. Amém."
+};
+
+const sets={
+ gozosos:{label:"Mistérios Gozosos",icon:"i-lily",days:"Segundas e sábados",
+  about:"Contemplam a Encarnação e a infância de Jesus: Anunciação, Visitação, Nascimento, Apresentação no Templo e Encontro de Jesus no Templo.",items:[
+  ["A Anunciação do Anjo a Nossa Senhora","O anjo Gabriel anuncia a Maria que ela será a Mãe de Jesus. Maria responde com fé e entrega: faça-se em mim segundo a tua palavra.","Lc 1,26-38","Peça a graça da humildade e de acolher a vontade de Deus."],
+  ["A Visitação de Nossa Senhora a Santa Isabel","Maria, já trazendo Jesus em seu ventre, vai servir sua prima Isabel. No encontro, Isabel reconhece a presença do Senhor.","Lc 1,39-56","Peça uma caridade pronta e generosa."],
+  ["O Nascimento de Jesus em Belém","Jesus nasce em Belém, pobre e humilde, e é colocado numa manjedoura.","Lc 2,1-20","Contemple a simplicidade do Menino Jesus e peça desapego."],
+  ["A Apresentação do Menino Jesus no Templo","Maria e José apresentam Jesus no Templo. Simeão reconhece nele a salvação prometida por Deus.","Lc 2,22-35","Peça obediência e fidelidade a Deus."],
+  ["A Perda e o Encontro do Menino Jesus no Templo","Depois de três dias de procura, Maria e José encontram Jesus entre os doutores no Templo.","Lc 2,41-52","Peça perseverança para buscar Jesus quando Ele parecer distante."]
+ ]},
+ luminosos:{label:"Mistérios Luminosos",icon:"i-flame",days:"Quintas-feiras",
+  about:"Contemplam a vida pública de Cristo: Batismo no Jordão, Bodas de Caná, anúncio do Reino, Transfiguração e instituição da Eucaristia.",items:[
+  ["O Batismo de Jesus no Jordão","Jesus é batizado por João. O Espírito Santo desce sobre Ele e a voz do Pai o proclama Filho amado.","Mt 3,13-17","Renove interiormente a graça de seu próprio batismo."],
+  ["As Bodas de Caná","Maria percebe a falta de vinho e intercede. Jesus realiza seu primeiro sinal, transformando água em vinho.","Jo 2,1-11","Confie na intercessão de Nossa Senhora e em Cristo."],
+  ["O Anúncio do Reino de Deus","Jesus anuncia que o Reino de Deus está próximo e chama todos à conversão e à fé no Evangelho.","Mc 1,14-15","Peça verdadeira conversão do coração."],
+  ["A Transfiguração de Jesus","Jesus revela sua glória a Pedro, Tiago e João no monte; sua face resplandece diante deles.","Mt 17,1-8","Peça fé para permanecer com Cristo mesmo nas provações."],
+  ["A Instituição da Eucaristia","Na Última Ceia, Jesus entrega seu Corpo e Sangue sob as espécies do pão e do vinho.","Lc 22,14-20","Agradeça a presença de Cristo na Eucaristia."]
+ ]},
+ dolorosos:{label:"Mistérios Dolorosos",icon:"i-cross",days:"Terças e sextas-feiras",
+  about:"Contemplam a Paixão de Cristo: agonia no Horto, flagelação, coroação de espinhos, caminho do Calvário e crucificação.",items:[
+  ["A Agonia de Jesus no Horto","No Getsêmani, Jesus sofre profundamente, reza ao Pai e aceita livremente a paixão que se aproxima.","Lc 22,39-46","Peça força para dizer a Deus: seja feita a vossa vontade."],
+  ["A Flagelação de Jesus","Jesus é açoitado depois de ser entregue a Pilatos.","Jo 19,1","Contemple sua paciência e ofereça a Ele seus sofrimentos."],
+  ["A Coroação de Espinhos","Os soldados colocam em Jesus uma coroa de espinhos e zombam de sua realeza.","Mt 27,27-31","Peça humildade diante das humilhações."],
+  ["Jesus carrega a Cruz para o Calvário","Jesus toma a cruz e caminha até o lugar onde será crucificado.","Lc 23,26-32","Peça a graça de carregar sua própria cruz com fidelidade."],
+  ["A Crucificação e Morte de Jesus","Jesus é crucificado e entrega sua vida por amor, confiando-se ao Pai.","Lc 23,33-46","Contemple o amor de Cristo levado até o fim."]
+ ]},
+ gloriosos:{label:"Mistérios Gloriosos",icon:"i-crown",days:"Quartas-feiras e domingos",
+  about:"Contemplam a vitória de Cristo e a glória celeste: Ressurreição, Ascensão, Pentecostes, Assunção e Coroação de Nossa Senhora.",items:[
+  ["A Ressurreição de Jesus","Ao terceiro dia, Jesus ressuscita dos mortos e vence definitivamente a morte.","Mt 28,1-10","Peça uma fé viva e esperança na vida eterna."],
+  ["A Ascensão de Jesus ao Céu","Cristo ressuscitado sobe ao Céu diante dos discípulos e os envia em missão.","At 1,6-11","Peça desejo do Céu e fidelidade à missão cristã."],
+  ["A Vinda do Espírito Santo","O Espírito Santo desce sobre Maria e os Apóstolos reunidos em oração.","At 2,1-13","Peça os dons e a docilidade ao Espírito Santo."],
+  ["A Assunção de Nossa Senhora","A Igreja contempla Maria elevada à glória celeste, de corpo e alma.","Ap 12,1","Peça pureza de coração e esperança na ressurreição."],
+  ["A Coroação de Nossa Senhora","Maria é contemplada na glória, junto de Cristo, como Rainha do Céu e da Terra.","Ap 12,1","Confie sua vida à intercessão maternal de Nossa Senhora."]
+ ]}
+};
+
+const weekdays=["Domingo","Segunda-feira","Terça-feira","Quarta-feira","Quinta-feira","Sexta-feira","Sábado"];
+const dayMap={0:"gloriosos",1:"gozosos",2:"dolorosos",3:"gloriosos",4:"luminosos",5:"dolorosos",6:"gozosos"};
+const romans=["I","II","III","IV","V"];
+
+const $=id=>document.getElementById(id);
+const today=new Date().getDay();
+const todaySet=dayMap[today];
+let currentSet=todaySet;
+let steps=[],beadMap={},bmIndex=0;
+
+/* ================= RENDER DOS PASSOS ================= */
+function stepHTML(id,title,text,opt={}){
+ const cls=["pstep",opt.size||"",opt.rep?"rep":"",opt.cross?"cross":""].filter(Boolean).join(" ");
+ const kicker=opt.kicker?`<div class="kicker">${opt.kicker}</div>`:"";
+ const hint=opt.rep?`<div class="tap-hint"><svg class="icon"><use href="#i-text"/></svg>toque para ver o texto</div>`:"";
+ return `<article class="${cls}" data-step="${id}" data-title="${title.replace(/"/g,"&quot;")}" data-icon="${opt.icon||"i-bead"}">
+   <button class="check" aria-label="Marcar ${title}"><svg class="icon"><use href="#i-check"/></svg></button>
+   ${kicker}<h4>${title}</h4><div class="prayer">${text}</div>${hint}
+ </article>`;
+}
+
+function renderInitial(){
+ $("initialList").innerHTML=[
+  stepHTML("ini-sign","Sinal da Cruz",prayers.sign,{kicker:"Na cruz do terço",cross:1,icon:"i-cross"}),
+  stepHTML("ini-offer","Oferecimento do Terço",prayers.offering,{kicker:"Intenção",icon:"i-heart"}),
+  stepHTML("ini-creed","Credo dos Apóstolos",prayers.creed,{kicker:"Na cruz",size:"lg",icon:"i-church"}),
+  stepHTML("ini-pater","Pai-Nosso",prayers.pater,{kicker:"1ª conta grande",size:"lg",icon:"i-bead"}),
+  stepHTML("ini-ave1","1ª Ave-Maria — pela fé",prayers.ave,{kicker:"Conta pequena",icon:"i-bead"}),
+  stepHTML("ini-ave2","2ª Ave-Maria — pela esperança",prayers.ave,{kicker:"Conta pequena",rep:1,icon:"i-bead"}),
+  stepHTML("ini-ave3","3ª Ave-Maria — pela caridade",prayers.ave,{kicker:"Conta pequena",rep:1,icon:"i-bead"}),
+  stepHTML("ini-gloria","Glória ao Pai",prayers.gloria,{kicker:"Junto à medalha",size:"lg",icon:"i-star"})
+ ].join("");
+}
+
+function renderMysteries(){
+ const set=sets[currentSet];
+ $("mysteryType").textContent=set.label;
+ $("mysteriesHeading").textContent=set.label;
+ $("setTitle").textContent=set.label;
+ const box=$("mysteryList");
+ box.innerHTML="";
+ set.items.forEach((m,mi)=>{
+  const base=`m${mi+1}`;
+  const art=document.createElement("article");
+  art.className="mystery";
+  art.id=base;
+  art.dataset.num=`${mi+1}º mistério de cinco`;
+  art.innerHTML=`
+   <div class="mhead">
+    <div class="mnum"><span class="roman">${romans[mi]}</span><span class="of">${mi+1}º mistério de cinco</span></div>
+    <div>
+     <h3>${m[0]}</h3>
+     <p class="what">${m[1]}</p>
+     <p class="med">${m[3]}</p>
+     <span class="ref"><svg class="icon"><use href="#i-book"/></svg>${m[2]}</span>
+    </div>
+   </div>
+   <div class="sequence">
+    <div class="sequence-title"><span>Reze nesta ordem</span><span class="decade-count" data-decade="${base}"></span></div>
+    <div class="beads">
+     ${stepHTML(base+"-announce","Anuncie o mistério",`“No ${mi+1}º mistério, contemplamos: ${m[0]}.”`,{kicker:"Anúncio",icon:"i-book"})}
+     ${stepHTML(base+"-pater","Pai-Nosso",prayers.pater,{kicker:"Conta grande",size:"lg",icon:"i-bead"})}
+     ${Array.from({length:10},(_,i)=>stepHTML(base+"-ave"+(i+1),`${i+1}ª Ave-Maria`,prayers.ave,{kicker:`Ave-Maria ${i+1} de 10`,rep:i>0,icon:"i-bead"})).join("")}
+     ${stepHTML(base+"-gloria","Glória ao Pai",prayers.gloria,{kicker:"Fim da dezena",size:"lg",icon:"i-star"})}
+     ${stepHTML(base+"-mercy","Jaculatória — Meu Jesus",prayers.mercy,{kicker:"Jaculatória",icon:"i-heart"})}
+     ${stepHTML(base+"-fatima","Oração de Fátima",prayers.fatima,{kicker:"Jaculatória de Fátima",icon:"i-lily"})}
+    </div>
+   </div>`;
+  box.appendChild(art);
+ });
+}
+
+function renderFinal(){
+ $("finalList").innerHTML=[
+  stepHTML("fim-salve","Salve-Rainha",prayers.salve,{kicker:"Na medalha",size:"lg",icon:"i-crown"}),
+  stepHTML("fim-final","Oração final do Rosário",prayers.final,{kicker:"Conclusão",icon:"i-hands"}),
+  stepHTML("fim-sign","Sinal da Cruz",prayers.sign,{kicker:"Encerramento",cross:1,icon:"i-cross"})
+ ].join("");
+}
+
+function renderTypes(){
+ $("typesGrid").innerHTML=Object.entries(sets).map(([k,s])=>`
+  <div class="type" data-t="${k}">
+   <h4><svg class="icon"><use href="#${s.icon}"/></svg>${s.label}</h4>
+   <div class="days">${s.days}</div>
+   <p>${s.about}</p>
+   <button class="btn" data-goset="${k}">Rezar estes</button>
+  </div>`).join("");
+ $("typesGrid").querySelectorAll("[data-goset]").forEach(b=>b.onclick=()=>{
+  selectSet(b.dataset.goset);
+  $("misterios").scrollIntoView({behavior:"smooth"});
+ });
+}
+
+function renderChips(){
+ $("setChips").innerHTML=Object.entries(sets).map(([k,s])=>`
+  <button class="chip" data-set="${k}" aria-pressed="${k===currentSet}">
+   <svg class="icon"><use href="#${s.icon}"/></svg>${s.label.replace("Mistérios ","")}${k===todaySet?' <span class="today-flag">hoje</span>':""}
+  </button>`).join("");
+ $("setChips").querySelectorAll(".chip").forEach(c=>c.onclick=()=>selectSet(c.dataset.set));
+ const box=$("setChips"),act=box.querySelector('[aria-pressed="true"]');
+ // só rola quando a faixa de chips realmente tem rolagem horizontal
+ if(act&&box.scrollWidth>box.clientWidth+4)act.scrollIntoView({block:"nearest",inline:"nearest"});
+}
+
+/* ================= ROSÁRIO SVG ================= */
+const NS="http://www.w3.org/2000/svg";
+function el(tag,attrs){const n=document.createElementNS(NS,tag);for(const k in attrs)n.setAttribute(k,attrs[k]);return n}
+
+function buildRosary(){
+ const svg=$("rosarySvg");
+ svg.innerHTML="";beadMap={};
+ const cx=150,cy=132,R=104,start=97,sweep=346;
+ const unit=sweep/(55+5*0.7);
+ svg.appendChild(el("circle",{cx,cy,r:R,class:"chain-line"}));
+ svg.appendChild(el("path",{d:`M${cx} ${cy+R} L${cx} 340`,class:"chain-line"}));
+ const add=(x,y,r,id,label)=>{
+  const c=el("circle",{cx:x,cy:y,r,class:"bead","data-step":id});
+  const t=el("title",{});t.textContent=label;c.appendChild(t);
+  c.addEventListener("click",()=>gotoStep(id));
+  svg.appendChild(c);beadMap[id]=c;
+ };
+ for(let d=0;d<5;d++){
+  for(let j=0;j<11;j++){
+   const k=d*11+j;
+   const a=(start+(k+d*0.7+0.5)*unit)*Math.PI/180;
+   const x=cx+Math.cos(a)*R,y=cy+Math.sin(a)*R;
+   const id=j===0?`m${d+1}-pater`:`m${d+1}-ave${j}`;
+   add(x,y,j===0?6.8:4.6,id,j===0?`${d+1}ª dezena — Pai-Nosso`:`${d+1}ª dezena — Ave-Maria ${j}`);
+  }
+ }
+ const med=el("ellipse",{cx,cy:cy+R+2,rx:9,ry:11.5,class:"medal"});
+ const mt=el("title",{});mt.textContent="Medalha — Salve-Rainha";med.appendChild(mt);
+ med.style.cursor="pointer";med.addEventListener("click",()=>gotoStep("fim-salve"));
+ svg.appendChild(med);
+ svg.appendChild(el("path",{d:`M${cx-3.4} ${cy+R+2} h6.8 M${cx} ${cy+R-2.4} v9`,class:"medal-mark"}));
+ add(cx,258,6.8,"ini-gloria","Glória ao Pai");
+ add(cx,281,4.6,"ini-ave3","3ª Ave-Maria — caridade");
+ add(cx,296,4.6,"ini-ave2","2ª Ave-Maria — esperança");
+ add(cx,311,4.6,"ini-ave1","1ª Ave-Maria — fé");
+ add(cx,332,6.8,"ini-pater","Pai-Nosso");
+ const cross=el("path",{d:"M146 348 h8 v11 h11 v8 h-11 v23 h-8 v-23 h-11 v-8 h11 z",class:"rcross","data-step":"ini-creed"});
+ const ct=el("title",{});ct.textContent="Cruz — Sinal da Cruz e Credo";cross.appendChild(ct);
+ cross.addEventListener("click",()=>gotoStep("ini-creed"));
+ svg.appendChild(cross);beadMap["ini-creed"]=cross;
+}
+
+function gotoStep(id){
+ const node=document.querySelector(`.pstep[data-step="${id}"]`);
+ if(!node)return;
+ if(document.body.classList.contains("mode-conta")){
+  const i=steps.indexOf(node);if(i>=0){bmIndex=i;renderBead()}
+  return;
+ }
+ node.classList.add("open");
+ node.scrollIntoView({behavior:"smooth",block:"center"});
+}
+
+/* ================= ESTADO / PROGRESSO ================= */
+const storageKey=()=>"terco-"+currentSet;
+
+function bindSteps(){
+ steps=[...document.querySelectorAll(".pstep")];
+ steps.forEach(elm=>{
+  const key=storageKey()+":"+elm.dataset.step;
+  try{if(localStorage.getItem(key)==="1")elm.classList.add("done")}catch(e){}
+  elm.querySelector(".check").onclick=ev=>{ev.stopPropagation();toggle(elm)};
+  elm.addEventListener("click",()=>{
+   if(document.body.classList.contains("mode-guiado")&&elm.classList.contains("rep"))elm.classList.toggle("open");
+  });
+ });
+ updateProgress();
+}
+
+function toggle(elm,force){
+ const on=force===undefined?!elm.classList.contains("done"):force;
+ elm.classList.toggle("done",on);
+ try{localStorage.setItem(storageKey()+":"+elm.dataset.step,on?"1":"0")}catch(e){}
+ updateProgress();
+}
+
+function updateProgress(){
+ const done=steps.filter(s=>s.classList.contains("done")).length;
+ const total=steps.length;
+ const pct=total?done/total*100:0;
+ $("progressText").textContent=`${done} de ${total} contas`;
+ $("stepBar").style.width=pct+"%";
+ $("stepBar2").style.width=pct+"%";
+ $("stepBar3").style.width=pct+"%";
+ $("statLeft").textContent=`${done} de ${total} contas`;
+ $("statRight").textContent=Math.round(pct)+"%";
+ $("moPct").textContent=Math.round(pct)+"%";
+
+ steps.forEach(s=>s.classList.remove("current"));
+ const next=steps.find(s=>!s.classList.contains("done"));
+ const label=next?next.dataset.title:"Terço concluído — Deo gratias";
+ if(next){
+  next.classList.add("current");
+  if(next.classList.contains("rep"))next.classList.add("open");
+ }
+ $("nowStep").textContent=label;
+ $("moStep").textContent=label;
+
+ Object.entries(beadMap).forEach(([id,node])=>{
+  const st=steps.find(s=>s.dataset.step===id);
+  node.classList.toggle("filled",!!st&&st.classList.contains("done"));
+  node.classList.toggle("current",!!st&&st.classList.contains("current"));
+ });
+
+ document.querySelectorAll(".decade-count").forEach(c=>{
+  const base=c.dataset.decade;
+  const aves=steps.filter(s=>s.dataset.step.startsWith(base+"-ave"));
+  c.textContent=`${aves.filter(a=>a.classList.contains("done")).length}/10 Ave-Marias`;
+ });
+ if(document.body.classList.contains("mode-conta"))renderBeadMeta();
+}
+
+/* ================= MODO UMA CONTA ================= */
+function mysteryContextOf(node){
+ const m=node.closest(".mystery");
+ if(!m)return null;
+ return{title:m.querySelector("h3").textContent,text:m.querySelector(".med").textContent,
+        ref:m.querySelector(".ref").textContent.trim(),num:m.dataset.num};
+}
+function renderTrack(node){
+ const t=$("bmTrack");
+ const id=node.dataset.step;
+ const m=id.match(/^(m[1-5])-/);
+ const group=m?steps.filter(s=>s.dataset.step.startsWith(m[1]+"-"))
+              :steps.filter(s=>s.dataset.step.startsWith(id.startsWith("ini")?"ini-":"fim-"));
+ t.innerHTML=group.map(s=>{
+  const big=s.classList.contains("lg")||s.classList.contains("cross");
+  return `<i class="${s.classList.contains("done")?"on ":""}${s===node?"now ":""}${big?"big":""}"></i>`;
+ }).join("");
+}
+function renderBead(){
+ bmIndex=Math.max(0,Math.min(bmIndex,steps.length-1));
+ const node=steps[bmIndex];
+ if(!node)return;
+ $("bmKicker").textContent=node.querySelector(".kicker")?.textContent||"Oração";
+ $("bmTitle").textContent=node.dataset.title;
+ $("bmText").textContent=node.querySelector(".prayer").textContent;
+ const ctx=mysteryContextOf(node);
+ const box=$("bmMystery");
+ if(ctx){
+  box.hidden=false;
+  box.innerHTML=`<b>${ctx.title}</b><i>${ctx.text} (${ctx.ref})</i>`;
+  $("bmCtx").innerHTML=`<strong>${ctx.num}</strong><span class="hide-sm"> · ${sets[currentSet].label}</span>`;
+ }else{
+  box.hidden=true;
+  $("bmCtx").textContent=sets[currentSet].label;
+ }
+ $("bmNext").innerHTML=(node.classList.contains("done")?"Avançar":"Rezei")+' <svg class="icon"><use href="#i-right"/></svg>';
+ renderTrack(node);
+ renderBeadMeta();
+ document.querySelector(".bm-body")?.scrollTo(0,0);
+}
+function renderBeadMeta(){
+ const done=steps.filter(s=>s.classList.contains("done")).length;
+ $("bmBar").style.width=(steps.length?done/steps.length*100:0)+"%";
+ $("bmCount").textContent=`${bmIndex+1}/${steps.length}`;
+}
+$("bmNext").onclick=()=>{
+ const node=steps[bmIndex];
+ if(node&&!node.classList.contains("done"))toggle(node,true);
+ if(bmIndex<steps.length-1)bmIndex++;
+ renderBead();
+};
+$("bmPrev").onclick=()=>{bmIndex=Math.max(0,bmIndex-1);renderBead()};
+$("bmClose").onclick=()=>setMode("guiado");
+addEventListener("keydown",e=>{
+ if(!document.body.classList.contains("mode-conta"))return;
+ if(e.key==="ArrowRight"||e.key===" "){e.preventDefault();$("bmNext").click()}
+ if(e.key==="ArrowLeft"){e.preventDefault();$("bmPrev").click()}
+ if(e.key==="Escape")setMode("guiado");
+});
+
+/* ================= MODOS ================= */
+let savedScroll=0;
+function lockScroll(on){
+ const b=document.body;
+ if(on&&!b.classList.contains("locked")){
+  savedScroll=window.scrollY;
+  b.style.top=`-${savedScroll}px`;
+  b.classList.add("locked");
+ }else if(!on&&b.classList.contains("locked")){
+  b.classList.remove("locked");
+  b.style.top="";
+  window.scrollTo(0,savedScroll);
+ }
+}
+function setMode(mode){
+ lockScroll(mode==="conta");
+ document.body.classList.remove("mode-guiado","mode-conta","mode-leitura");
+ document.body.classList.add("mode-"+mode);
+ $("modeSeg").querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.mode===mode));
+ try{localStorage.setItem("terco-mode",mode)}catch(e){}
+ if(mode==="conta"){
+  const next=steps.findIndex(s=>!s.classList.contains("done"));
+  bmIndex=next<0?0:next;
+  renderBead();
+ }
+}
+$("modeSeg").querySelectorAll("button").forEach(b=>b.onclick=()=>setMode(b.dataset.mode));
+$("prayBtn").onclick=()=>setMode("conta");
+$("moPray").onclick=()=>setMode("conta");
+$("jumpBtn").onclick=()=>{const n=steps.find(s=>s.classList.contains("current"));if(n)gotoStep(n.dataset.step)};
+
+function setTheme(t){
+ document.documentElement.dataset.theme=t;
+ $("themeIcon").setAttribute("href",t==="noite"?"#i-sun":"#i-moon");
+ $("themeText").textContent=t==="noite"?"Claro":"Noite";
+ $("themeColor").setAttribute("content",t==="noite"?"#100e0c":"#f4f1ea");
+ try{localStorage.setItem("terco-theme",t)}catch(e){}
+}
+$("themeBtn").onclick=()=>setTheme(document.documentElement.dataset.theme==="noite"?"claro":"noite");
+$("fontBtn").onclick=()=>{
+ const big=document.body.classList.toggle("big-text");
+ document.body.style.fontSize=big?"19px":"";
+ $("fontBtn").textContent=big?"A⁻":"A⁺";
+};
+
+function selectSet(key){
+ currentSet=key;
+ document.body.dataset.set=key;
+ renderChips();renderMysteries();renderInitial();renderFinal();buildRosary();bindSteps();
+ if(document.body.classList.contains("mode-conta")){
+  const next=steps.findIndex(s=>!s.classList.contains("done"));
+  bmIndex=next<0?0:next;renderBead();
+ }
+}
+
+$("resetAll").onclick=()=>{
+ const prefix=storageKey()+":";
+ try{Object.keys(localStorage).filter(k=>k.startsWith(prefix)).forEach(k=>localStorage.removeItem(k))}catch(e){}
+ steps.forEach(s=>s.classList.remove("done","open"));
+ updateProgress();
+};
+
+/* ================= SANTO DO DIA ================= */
+const seasonPT={"Ordinary Time":"Tempo Comum",ORDINARY_TIME:"Tempo Comum",ADVENT:"Advento",Advent:"Advento",
+ LENT:"Quaresma",Lent:"Quaresma",EASTER:"Páscoa",Easter:"Tempo Pascal",CHRISTMAS:"Natal",Christmas:"Tempo do Natal"};
+const ptSeason=s=>seasonPT[s]||s;
+function ptCelebration(n){
+ if(!n)return n;
+ const ord=n.match(/^(\d+)(?:st|nd|rd|th)\s+Sunday\s+of\s+(.+)$/i);
+ if(ord)return `${ord[1]}º Domingo do ${ptSeason(ord[2])}`;
+ const dias={Monday:"Segunda-feira",Tuesday:"Terça-feira",Wednesday:"Quarta-feira",Thursday:"Quinta-feira",Friday:"Sexta-feira",Saturday:"Sábado",Sunday:"Domingo"};
+ const wd=n.match(/^(\w+)\s+of\s+the\s+(\d+)(?:st|nd|rd|th)\s+week\s+of\s+(.+)$/i);
+ if(wd&&dias[wd[1]])return `${dias[wd[1]]} da ${wd[2]}ª semana do ${ptSeason(wd[3])}`;
+ return n.replace(/^Saint\s+/,"São ").replace(/^Blessed\s+/,"Beato(a) ")
+         .replace(/\bMartyr\b/,"mártir").replace(/\bBishop\b/,"bispo")
+         .replace(/\bVirgin\b/,"virgem").replace(/\bPriest\b/,"presbítero");
+}
+
+async function loadSaint(){
+ const now=new Date();
+ const y=now.getFullYear(),day=now.getDate(),month=now.getMonth()+1;
+ const md=String(month).padStart(2,"0")+"-"+String(day).padStart(2,"0");
+ try{
+  const pt=await fetch(`https://59952763-8243-4cd9-a90e-b0aedccaec95-00-3ssqhwg9tk2rz.worf.replit.dev/dia=${day}&mes=${month}`,{cache:"no-store"});
+  if(pt.ok){
+   const data=await pt.json();
+   const names=(data.results||[]).map(x=>x.nome).filter(Boolean);
+   if(names.length){
+    $("saintTitle").textContent=names.join(" • ");
+    $("saintSub").textContent="Santo(s) celebrado(s) nesta data";
+    return;
+   }
+  }
+ }catch(e){}
+ try{
+  const r=await fetch(`https://cpbjr.github.io/catholic-readings-api/liturgical-calendar/${y}/${md}.json`,{cache:"no-store"});
+  if(!r.ok)throw new Error();
+  const d=await r.json();
+  if(!d.celebration?.name)throw new Error();
+  const types={MEMORIAL:"Memória",OPTIONAL_MEMORIAL:"Memória facultativa",FEAST:"Festa",SOLEMNITY:"Solenidade"};
+  $("saintTitle").textContent=ptCelebration(d.celebration.name);
+  $("saintSub").textContent=(types[d.celebration.type]||"Celebração litúrgica")+(d.season?` • ${ptSeason(d.season)}`:"");
+ }catch(e){
+  $("saintTitle").textContent="Santo / celebração do dia";
+  $("saintSub").textContent="Não foi possível consultar agora — veja no Vatican News";
+ }
+}
+
+/* ================= INÍCIO ================= */
+const nowD=new Date();
+$("dateLabel").textContent=nowD.toLocaleDateString("pt-BR",{day:"2-digit",month:"long",year:"numeric"});
+$("weekdayLabel").textContent=weekdays[today];
+try{setTheme(localStorage.getItem("terco-theme")||"claro")}catch(e){setTheme("claro")}
+renderTypes();
+selectSet(todaySet);
+try{setMode(localStorage.getItem("terco-mode")==="leitura"?"leitura":"guiado")}catch(e){setMode("guiado")}
+loadSaint();
+addEventListener("scroll",()=>{
+ const h=document.documentElement.scrollHeight-innerHeight;
+ $("progress").style.width=(h>0?scrollY/h*100:0)+"%";
+},{passive:true});
+</script>
+</body>
+</html>

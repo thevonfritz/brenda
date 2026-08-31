@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Santo Terço">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#75423f"/>
+      <stop offset=".5" stop-color="#5a2e2c"/>
+      <stop offset="1" stop-color="#331d1b"/>
+    </linearGradient>
+    <linearGradient id="au" x1=".2" y1="0" x2=".8" y2="1">
+      <stop offset="0" stop-color="#f2dcae"/>
+      <stop offset=".5" stop-color="#d8b571"/>
+      <stop offset="1" stop-color="#a8802f"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="15" fill="url(#bg)"/>
+  <rect x="3.5" y="3.5" width="57" height="57" rx="12" fill="none" stroke="#e2cba2" stroke-opacity=".34"/>
+  <circle cx="32" cy="11.6" r="4.4" fill="url(#au)"/>
+  <path d="M27.9 18.6h8.2v10.3h10.4v8.2H36.1V54h-8.2V37.1H17.5v-8.2h10.4z" fill="url(#au)"/>
+</svg>
